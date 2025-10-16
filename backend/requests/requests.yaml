@@ -1,0 +1,190 @@
+_type: export
+__export_format: 4
+__export_date: 2025-10-16T00:00:00.000Z
+__export_source: insomnia.desktop.app:v10.0.0
+resources:
+  - _id: wrk_12345
+    parentId: null
+    name: Mini-Projeto Fullstack - Parte I
+    type: workspace
+
+  - _id: fld_cadastro
+    parentId: wrk_12345
+    name: Cadastro
+    type: request_group
+
+  - _id: fld_login
+    parentId: wrk_12345
+    name: Login
+    type: request_group
+
+  - _id: fld_protected
+    parentId: wrk_12345
+    name: Protected
+    type: request_group
+
+  # -------------------------
+  # ROTAS DE CADASTRO
+  # -------------------------
+  # Cadastro bem-sucedido
+  - _id: req_cadastro_sucesso
+    parentId: fld_cadastro
+    name: Cadastro - Sucesso
+    method: POST
+    url: http://localhost:3000/api/register
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "name": "UsuarioTeste",
+          "email": "usuario_sucesso@email.com",
+          "password": "123456"
+        }
+
+# Cadastro com erro (E-mail repetido)
+  - _id: req_cadastro_email_repetido
+    parentId: fld_cadastro
+    name: Cadastro - Erro (E-mail repetido)
+    method: POST
+    url: http://localhost:3000/api/register
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "name": "UsuarioRepetido",
+          "email": "usuario_sucesso@email.com",
+          "password": "123456"
+        }
+
+# Cadastro com erro (Senha inválida)
+  - _id: req_cadastro_senha_invalida
+    parentId: fld_cadastro
+    name: Cadastro - Erro (Senha inválida)
+    method: POST
+    url: http://localhost:3000/api/register
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "name": "UsuarioSenhaInvalida",
+          "email": "usuario_senha@email.com",
+          "password": ""
+        }
+
+# Cadastro com erro (E-mail inválido)
+  - _id: req_cadastro_email_invalido
+    parentId: fld_cadastro
+    name: Cadastro - Erro (E-mail inválido)
+    method: POST
+    url: http://localhost:3000/api/register
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "name": "UsuarioEmailInvalido",
+          "email": "email_invalido",
+          "password": "123456"
+        }
+
+# Cadastro com erro (Requisição mal formatada)
+# Faltam name e password.
+  - _id: req_cadastro_mal_formatado
+    parentId: fld_cadastro
+    name: Cadastro - Erro (Requisição mal formatada)
+    method: POST
+    url: http://localhost:3000/api/register
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": "sem_nome@teste.com"
+        }
+
+  # -------------------------
+  # ROTAS DE LOGIN
+  # -------------------------
+    # Login bem-sucedido
+  - _id: req_login_sucesso
+    parentId: fld_login
+    name: Login - Sucesso
+    method: POST
+    url: http://localhost:3000/api/login
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": "usuario_sucesso@email.com",
+          "password": "123456"
+        }
+
+# Login com erro (Senha inválida)
+  - _id: req_login_senha_invalida
+    parentId: fld_login
+    name: Login - Erro (Senha inválida)
+    method: POST
+    url: http://localhost:3000/api/login
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": "usuario_sucesso@email.com",
+          "password": "senhaErrada"
+        }
+
+# Login com erro (E-mail inválido)
+  - _id: req_login_email_invalido
+    parentId: fld_login
+    name: Login - Erro (E-mail inválido)
+    method: POST
+    url: http://localhost:3000/api/login
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": "email_invalido",
+          "password": "123456"
+        }
+
+# Login com erro (Requisição mal formatada)
+# Faltou o campo password.
+  - _id: req_login_mal_formatado
+    parentId: fld_login
+    name: Login - Erro (Requisição mal formatada)
+    method: POST
+    url: http://localhost:3000/api/login
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": "sem_senha@teste.com"
+        }
+
+  # -------------------------
+  # ROTA PROTEGIDA
+  # -------------------------
+   # Acesso /protected com token válido
+  - _id: req_protected_valido
+    parentId: fld_protected
+    name: Protected - Token válido
+    method: GET
+    url: http://localhost:3000/api/protected
+    headers:
+      - name: Authorization
+        value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZjE2MWU0ZjM0ZGIxNWU3ZDBkYzRiMSIsImlhdCI6MTc2MDY0OTgzNywiZXhwIjoxNzYwNjUzNDM3fQ.Xce_0Kzn96bd1SQq41KKzw0z_tyb-oVVVyq_lmTWAEc
+
+# Acesso /protected sem token
+  - _id: req_protected_sem_token
+    parentId: fld_protected
+    name: Protected - Sem token
+    method: GET
+    url: http://localhost:3000/api/protected
+
+# Acesso /protected com token inválido
+  - _id: req_protected_token_invalido
+    parentId: fld_protected
+    name: Protected - Token inválido
+    method: GET
+    url: http://localhost:3000/api/protected
+    headers:
+      - name: Authorization
+        value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZjE2MWU0ZjM0ZGIxNWU3ZDBkYzRiMSIsImlhdCI6MTc2MDY0OTgzNywiZXhwIjoxNzYwNjUzNDM3fQ.Xce_0Kzn96bd1SQq41KKzw0z_tyb-oVVVyq_lmTWAEc2222

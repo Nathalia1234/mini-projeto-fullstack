@@ -1,0 +1,176 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-10-16T00:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v11.6.1",
+  "resources": [
+    {
+      "_id": "wrk_mini_projeto_fullstack",
+      "parentId": null,
+      "name": "Mini-Projeto Fullstack - Parte I",
+      "type": "workspace"
+    },
+    {
+      "_id": "fld_cadastro",
+      "parentId": "wrk_mini_projeto_fullstack",
+      "name": "Cadastro",
+      "type": "request_group"
+    },
+    {
+      "_id": "fld_login",
+      "parentId": "wrk_mini_projeto_fullstack",
+      "name": "Login",
+      "type": "request_group"
+    },
+    {
+      "_id": "fld_protected",
+      "parentId": "wrk_mini_projeto_fullstack",
+      "name": "Protected",
+      "type": "request_group"
+    },
+    {
+      "_id": "req_cadastro_sucesso",
+      "parentId": "fld_cadastro",
+      "name": "Cadastro - Sucesso",
+      "method": "POST",
+      "url": "http://localhost:3000/api/register",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"UsuarioTeste\",\n  \"email\": \"usuario_sucesso@email.com\",\n  \"password\": \"123456\"\n}"
+      },
+      "type": "request"
+    },
+    {
+      "_id": "req_cadastro_email_repetido",
+      "parentId": "fld_cadastro",
+      "name": "Cadastro - Erro (E-mail repetido)",
+      "method": "POST",
+      "url": "http://localhost:3000/api/register",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"UsuarioRepetido\",\n  \"email\": \"usuario_sucesso@email.com\",\n  \"password\": \"123456\"\n}"
+      },
+      "type": "request"
+    },
+    {
+      "_id": "req_cadastro_senha_invalida",
+      "parentId": "fld_cadastro",
+      "name": "Cadastro - Erro (Senha inválida)",
+      "method": "POST",
+      "url": "http://localhost:3000/api/register",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"UsuarioSenhaInvalida\",\n  \"email\": \"usuario_senha@email.com\",\n  \"password\": \"\"\n}"
+      },
+      "type": "request"
+    },
+    {
+      "_id": "req_cadastro_email_invalido",
+      "parentId": "fld_cadastro",
+      "name": "Cadastro - Erro (E-mail inválido)",
+      "method": "POST",
+      "url": "http://localhost:3000/api/register",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"UsuarioEmailInvalido\",\n  \"email\": \"email_invalido\",\n  \"password\": \"123456\"\n}"
+      },
+      "type": "request"
+    },
+    {
+      "_id": "req_cadastro_mal_formatado",
+      "parentId": "fld_cadastro",
+      "name": "Cadastro - Erro (Requisição mal formatada)",
+      "method": "POST",
+      "url": "http://localhost:3000/api/register",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"email\": \"sem_nome@teste.com\"\n}"
+      },
+      "type": "request"
+    },
+    {
+      "_id": "req_login_sucesso",
+      "parentId": "fld_login",
+      "name": "Login - Sucesso",
+      "method": "POST",
+      "url": "http://localhost:3000/api/login",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"email\": \"usuario_sucesso@email.com\",\n  \"password\": \"123456\"\n}"
+      },
+      "type": "request"
+    },
+    {
+      "_id": "req_login_senha_invalida",
+      "parentId": "fld_login",
+      "name": "Login - Erro (Senha inválida)",
+      "method": "POST",
+      "url": "http://localhost:3000/api/login",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"email\": \"usuario_sucesso@email.com\",\n  \"password\": \"senhaErrada\"\n}"
+      },
+      "type": "request"
+    },
+    {
+      "_id": "req_login_email_invalido",
+      "parentId": "fld_login",
+      "name": "Login - Erro (E-mail inválido)",
+      "method": "POST",
+      "url": "http://localhost:3000/api/login",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"email\": \"email_invalido\",\n  \"password\": \"123456\"\n}"
+      },
+      "type": "request"
+    },
+    {
+      "_id": "req_login_mal_formatado",
+      "parentId": "fld_login",
+      "name": "Login - Erro (Requisição mal formatada)",
+      "method": "POST",
+      "url": "http://localhost:3000/api/login",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"email\": \"sem_senha@teste.com\"\n}"
+      },
+      "type": "request"
+    },
+    {
+      "_id": "req_protected_valido",
+      "parentId": "fld_protected",
+      "name": "Protected - Token válido",
+      "method": "GET",
+      "url": "http://localhost:3000/api/protected",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer SEU_TOKEN_AQUI"
+        }
+      ],
+      "type": "request"
+    },
+    {
+      "_id": "req_protected_sem_token",
+      "parentId": "fld_protected",
+      "name": "Protected - Sem token",
+      "method": "GET",
+      "url": "http://localhost:3000/api/protected",
+      "type": "request"
+    },
+    {
+      "_id": "req_protected_token_invalido",
+      "parentId": "fld_protected",
+      "name": "Protected - Token inválido",
+      "method": "GET",
+      "url": "http://localhost:3000/api/protected",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer token_invalido"
+        }
+      ],
+      "type": "request"
+    }
+  ]
+}
