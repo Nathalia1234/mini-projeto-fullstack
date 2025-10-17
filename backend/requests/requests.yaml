@@ -1,0 +1,382 @@
+_type: export
+__export_format: 4
+__export_date: 2025-10-17T20:32:25.998Z
+__export_source: insomnia.desktop.app:v2023.5.8
+resources:
+  - _id: req_2af1e53414c44026ac4452b97fa7cc15
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760732644097
+    created: 1760732559294
+    url: http://localhost:3000/api/protected
+    name: protected_token_invalido
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZjI5ZDE1NTRkYjk4NDhkMTU0MmZhMSIsImlhdCI6MTc2MDczMTUzMiwiZXhwIjoxNzYwNzM1MTMyfQ.jrj2cjd_sUji9azvb4g509GiVXGMyVcuQot8p2yXVT4(222)
+        id: pair_07f03aa4642844ab9e51e385c75ce3c6
+    authentication: {}
+    metaSortKey: -1760732559294
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_e262ec69667b4ef994a0b570472a26d0
+    parentId: null
+    modified: 1760699837957
+    created: 1760699627013
+    name: Desenvolvimento FullStack - Parte I
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_cceed06362e24f37b4b6d1c56b64cab3
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760732499129
+    created: 1760732486490
+    url: http://localhost:3000/api/protected
+    name: protected_sem_token
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760732486490
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_05418111ab074eadb806b2375ec2149f
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760732433972
+    created: 1760732348379
+    url: http://localhost:3000/api/protected
+    name: protected_valido
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZjI5ZDE1NTRkYjk4NDhkMTU0MmZhMSIsImlhdCI6MTc2MDczMTUzMiwiZXhwIjoxNzYwNzM1MTMyfQ.jrj2cjd_sUji9azvb4g509GiVXGMyVcuQot8p2yXVT4
+        id: pair_5ed754cd4cb7474d8d1ba4f56b453bb6
+    authentication: {}
+    metaSortKey: -1760732348379
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_721ef82cd1c347539d34c78b6caac4a6
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760732262046
+    created: 1760732235440
+    url: http://localhost:3000/api/login
+    name: login_requisicao_mal_formatada
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": "teste@emailteste.com"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760732235440
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_329e83ab6b7a41908d93a1cd862e71aa
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760731802267
+    created: 1760731734084
+    url: http://localhost:3000/api/login
+    name: login_erro_email_invalido
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": "naoexiste@emailteste.com",
+          "password": "123456"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760731734084
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_9d0b2e1fafcf40b5bfcda949674f1284
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760731639012
+    created: 1760731556921
+    url: http://localhost:3000/api/login
+    name: login_erro_senha_invalida
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "nathalia@emailteste.com",
+          "password": "654F"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760731556921
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_271442b68d454eef9741bdf16398a08f
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760731462314
+    created: 1760731386724
+    url: http://localhost:3000/api/login
+    name: login_sucesso
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": "nathalia@emailteste.com",
+          "password": "123456"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760731386724
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_7cee0769dd524a709c9a664f57029410
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760731328370
+    created: 1760730940501
+    url: http://localhost:3000/api/register
+    name: cadastro_requisicao_mal_formatada
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "name": "TesteMalFormat",
+          "email": "mal_format@email.com"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760731276964.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_387e84348d754b0f98f7419578ac4121
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760730894925
+    created: 1760730722825
+    url: http://localhost:3000/api/register
+    name: cadastro_erro_email_invalido
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "name": "Teste3", 
+        	"email": "testeemail.com", 
+        	"password": "123456"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760730722825
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_03d8a2a5ee73493c930e8bdb95bbd008
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760730795291
+    created: 1760730682967
+    url: http://localhost:3000/api/register
+    name: cadastro_erro_senha_invalida
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "name": "Teste4", 
+        	"email": "teste4@email.com",
+          "password": "12"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760730682967
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_09781e0bd98746d3874ff55a865433fb
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760730538911
+    created: 1760730456313
+    url: http://localhost:3000/api/register
+    name: cadastro_erro_email_repetido
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {"name": "Nathalia2",
+         "email": "nathalia@emailteste.com", 
+         "password": "123456"}
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760730456313
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_ba3b8cfab92a409eb17867946f6ae7f0
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760729884593
+    created: 1760729836396
+    url: "http://localhost:3000/api/register "
+    name: cadastro_sucesso
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {"name": "Nathalia",
+         "email": "nathalia@emailteste.com",
+         "password": "123456"}
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760729836396
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_dabd4c57cf067ac45cc4a034a8949096d37f32fd
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760699629362
+    created: 1760699629362
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1760699629362
+    _type: environment
+  - _id: jar_dabd4c57cf067ac45cc4a034a8949096d37f32fd
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760699629366
+    created: 1760699629366
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
