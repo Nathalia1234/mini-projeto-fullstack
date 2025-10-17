@@ -1,45 +1,74 @@
-import { createUser, findUserByEmail } from "../services/user.service.js";
-import jwt from "jsonwebtoken";
+import User from "../models/user.model.js";
 import bcrypt from "bcrypt";
-import dotenv from "dotenv";
+import jwt from "jsonwebtoken";
 
-dotenv.config();
 
-// --- Registrar usuário ---
 export const register = async (req, res) => {
+  const { name, email, password } = req.body;
   try {
-    const { name, email, password } = req.body;
+    
+    // Validações (nome, e-mail, senha)...
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!name || !email || !password)
-      return res.status(400).json({ message: "Preencha todos os campos obrigatórios." });
+    // Verifica se todos os campos obrigatórios foram enviados
+if (!name || !email || !password) {
+  return res.status(400).json({
+    message: "Requisição mal formatada! Campos obrigatórios ausentes."
+  });
+}
 
-    const existingUser = await findUserByEmail(email);
-    if (existingUser)
-      return res.status(422).json({ message: "E-mail já cadastrado." });
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ message: "E-mail inválido" });
+    }
 
-    await createUser(name, email, password);
-    res.status(201).json({ message: "Usuário criado com sucesso!" });
+    if (!password || password.length < 6) {
+      return res.status(400).json({ message: "Senha inválida." });
+    }
+
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: "E-mail repetido" });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = new User({ name, email, password: hashedPassword });
+    await newUser.save();
+
+    res.status(201).json({ message: "Cadastro bem-sucedido!" });
   } catch (error) {
-    res.status(500).json({ message: "Erro ao registrar usuário.", error: error.message });
+    console.error(error);
+    res.status(500).json({ message: "Erro no servidor." });
   }
 };
 
-// --- Login de usuário ---
+// ---------------------------------------------
+
 export const login = async (req, res) => {
+  const { email, password } = req.body;
+
   try {
-    const { email, password } = req.body;
+    const user = await User.findOne({ email });
 
-    const user = await findUserByEmail(email);
-    if (!user) return res.status(404).json({ message: "Usuário não encontrado." });
+ if ( !email || !password) {
+  return res.status(400).json({
+    message: "Requisição mal formatada! Campos obrigatórios ausentes."
+  });
+}
 
-    const validPassword = await bcrypt.compare(password, user.password);
-    if (!validPassword)
-      return res.status(401).json({ message: "Senha incorreta." });
+    if (!user) {
+      return res.status(404).json({ message: "E-mail inválido." });
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(401).json({ message: "Senha inválida." });
+    }
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
 
     res.status(200).json({ message: "Login bem-sucedido!", token });
   } catch (error) {
-    res.status(500).json({ message: "Erro ao realizar login.", error: error.message });
+    console.error(error);
+    res.status(500).json({ message: "Erro no servidor." });
   }
 };
