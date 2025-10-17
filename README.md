@@ -37,7 +37,7 @@ De forma resumida, a aplicação:
 - **GET /protected**:  Disponível apenas para usuários autenticados.  
   - Requer envio do token no cabeçalho:  
 
-![alt text](image-6.png)
+![alt text](./backend/src/img/image-6.png)
 
 ---
 
@@ -77,11 +77,11 @@ Caso o token seja inválido, expirado ou ausente, a API retorna mensagens como:
 
 As requisições foram testadas utilizando o **Insomnia**, conforme exigido na atividade.  
 
-![alt text](image.png)
+![alt text](./backend/src/img/image.png)
 
 Todas as rotas foram executadas com sucesso e exportadas em um único arquivo `requests.yaml` dentro da pasta `/requests`.
 
-![alt text](image-1.png)
+![alt text](./backend/src/img/image-1.png)
 
 ### 🔵 Requisições incluídas:
 
@@ -109,17 +109,17 @@ Todas as rotas foram executadas com sucesso e exportadas em um único arquivo `r
 
 ### Registro com sucesso
 
-![alt text](image-2.png)
+![alt text](./backend/src/img/image-2.png)
 
 ### Login com sucesso
 
-![alt text](image-3.png)
+![alt text](./backend/src/img/image-3.png)
 
 ### Acesso protegido com token inválido
 
 Obs.: Para ser inválido, ao final do token original coloquei (222)
 
-![alt text](image-4.png)
+![alt text](./backend/src/img/image-4.png)
 
 --- 
 
@@ -204,3 +204,4 @@ Um vídeo de até 2 minutos foi gravado mostrando:
 ### 🔵 Deploy 
 
 O projeto está disponível no Vercel: 
+
