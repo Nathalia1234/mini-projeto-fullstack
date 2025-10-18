@@ -1,4 +1,12 @@
 #  Mini-Projeto Fullstack - Parte I  
+
+## 🔵  Versão Atual
+**v1.0.0** - Deploy completo no Vercel + MongoDB Atlas + Testes Insomnia  
+🔗 [Ver Release no GitHub](https://github.com/Nathalia1234/mini-projeto-fullstack/releases/tag/v1.0.0)
+
+
+---
+
 ### 🔵 Autenticação de Usuários com Node.js, Express, MongoDB e JWT  
 
 Este projeto faz parte da disciplina de **Desenvolvimento Fullstack**, e tem como objetivo desenvolver uma aplicação backend com autenticação de usuários utilizando **Node.js**, **Express**, **MongoDB (Atlas)** e **JWT (JSON Web Token)**.  
