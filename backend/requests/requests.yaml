@@ -1,111 +1,14 @@
 _type: export
 __export_format: 4
-__export_date: 2025-10-18T01:37:00.610Z
+__export_date: 2025-10-18T16:23:40.389Z
 __export_source: insomnia.desktop.app:v2023.5.8
 resources:
-  - _id: req_c21aa9e8ae334e9c81520be2769f3ab2
-    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760749605987
-    created: 1760749548439
-    url: https://mini-projeto-fullstack-nu.vercel.app/api/protected
-    name: /api/protected - Vercel
-    description: ""
-    method: GET
-    body: {}
-    parameters: []
-    headers:
-      - name: User-Agent
-        value: insomnia/2023.5.8
-        id: pair_69ee0e9218b74c46b3e18ea80a4410eb
-      - id: pair_b291c42e37fa4f40a3f6a91725f839c9
-        name: Authorization
-        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZjJlNmViZDhjNDdlZTZlMDhkMjgzZiIsImlhdCI6MTc2MDc0OTUxMCwiZXhwIjoxNzYwNzUzMTEwfQ.TMgJqOZuFpsEbKFpDOxNjcwAe3ByEusMKpL7AR-3kEc
-        description: ""
-    authentication: {}
-    metaSortKey: -1760749548439
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: wrk_e262ec69667b4ef994a0b570472a26d0
-    parentId: null
-    modified: 1760699837957
-    created: 1760699627013
-    name: Desenvolvimento FullStack - Parte I
-    description: ""
-    scope: collection
-    _type: workspace
-  - _id: req_b45d0b9aafee4a7790802dafcfda3023
-    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760749539933
-    created: 1760749464695
-    url: https://mini-projeto-fullstack-nu.vercel.app/api/login
-    name: /api/login - Vercel
-    description: ""
-    method: POST
-    body:
-      mimeType: application/json
-      text: |
-        {
-          "email": "nathalia@emailteste.com",
-          "password": "123456"
-        }
-    parameters: []
-    headers:
-      - name: Content-Type
-        value: application/json
-      - name: User-Agent
-        value: insomnia/2023.5.8
-    authentication: {}
-    metaSortKey: -1760749464695
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_a2116a646db24c38bb638f899c471a13
-    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760749449383
-    created: 1760744452285
-    url: https://mini-projeto-fullstack-nu.vercel.app/api/register
-    name: /api/register - Vercel
-    description: ""
-    method: POST
-    body:
-      mimeType: application/json
-      text: |-
-        {"name": "Nathalia",
-         "email": "nathalia@emailteste.com",
-         "password": "123456"}
-    parameters: []
-    headers:
-      - name: Content-Type
-        value: application/json
-      - name: User-Agent
-        value: insomnia/2023.5.8
-    authentication: {}
-    metaSortKey: -1760744452285
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
   - _id: req_2af1e53414c44026ac4452b97fa7cc15
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760751315479
+    modified: 1760801776674
     created: 1760732559294
     url: "{{ base_url }}/api/protected"
-    name: protected_token_invalido
+    name: protected_token_invalido_producao
     description: ""
     method: GET
     body: {}
@@ -125,12 +28,45 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: wrk_e262ec69667b4ef994a0b570472a26d0
+    parentId: null
+    modified: 1760699837957
+    created: 1760699627013
+    name: Desenvolvimento FullStack - Parte I
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_cf128ffc14124a66ac7b7b82826a9e63
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760801787875
+    created: 1760801784372
+    url: http://localhost:3000/api/protected
+    name: protected_token_invalido_local
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZjI5ZDE1NTRkYjk4NDhkMTU0MmZhMSIsImlhdCI6MTc2MDczMTUzMiwiZXhwIjoxNzYwNzM1MTMyfQ.jrj2cjd_sUji9azvb4g509GiVXGMyVcuQot8p2yXVT4(222)
+        id: pair_07f03aa4642844ab9e51e385c75ce3c6
+    authentication: {}
+    metaSortKey: -1760732522892
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_cceed06362e24f37b4b6d1c56b64cab3
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760751307788
+    modified: 1760801766940
     created: 1760732486490
     url: "{{ base_url }}/api/protected"
-    name: protected_sem_token
+    name: protected_sem_token_producao
     description: ""
     method: GET
     body: {}
@@ -148,12 +84,35 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: req_fe00142e7a404f2c9b0db9a9db7c12a5
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760801587303
+    created: 1760801583599
+    url: http://localhost:3000/api/protected
+    name: protected_sem_token_local
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760732417434.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_05418111ab074eadb806b2375ec2149f
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760751240122
+    modified: 1760804397537
     created: 1760732348379
     url: "{{ base_url }}/api/protected"
-    name: protected_valido
+    name: protected_valido_producao
     description: ""
     method: GET
     body: {}
@@ -161,7 +120,7 @@ resources:
     headers:
       - name: Authorization
         value: Bearer
-          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZjI5ZDE1NTRkYjk4NDhkMTU0MmZhMSIsImlhdCI6MTc2MDczMTUzMiwiZXhwIjoxNzYwNzM1MTMyfQ.jrj2cjd_sUji9azvb4g509GiVXGMyVcuQot8p2yXVT4
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZjNiZGZkZjM4NzFjYzRmOWU4YWE1OCIsImlhdCI6MTc2MDgwNDM4MSwiZXhwIjoxNzYwODA3OTgxfQ.CYV1ThUnT-0HbDUu-rADyHm1LhlWq02OUcwLsNFUvG4
         id: pair_5ed754cd4cb7474d8d1ba4f56b453bb6
     authentication: {}
     metaSortKey: -1760732348379
@@ -173,12 +132,37 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: req_a15da936b12a4272bb124a4f0a7123c3
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760803049327
+    created: 1760795756639
+    url: http://localhost:3000/api/protected
+    name: protected_valido_local
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZjNiOGI3YTJiNjc3MmM4ZTdmZWRlYyIsImlhdCI6MTc2MDgwMzAyMywiZXhwIjoxNzYwODA2NjIzfQ.tzomH-koEpTGBuJqjP2cjI6B7QAa2xAwwfL94DNXDp8
+        id: pair_5ed754cd4cb7474d8d1ba4f56b453bb6
+    authentication: {}
+    metaSortKey: -1760732291909.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_721ef82cd1c347539d34c78b6caac4a6
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760751300461
+    modified: 1760801742444
     created: 1760732235440
     url: "{{ base_url }}/api/login"
-    name: login_requisicao_mal_formatada
+    name: login_requisicao_mal_formatada_producao
     description: ""
     method: POST
     body:
@@ -203,12 +187,42 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: req_46da0efe00a54eb894a5e4499d37d20c
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760801750176
+    created: 1760801750176
+    url: "{{ base_url }}/api/login"
+    name: login_requisicao_mal_formatada_local
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": "teste@emailteste.com"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760731984762
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_329e83ab6b7a41908d93a1cd862e71aa
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760751294071
+    modified: 1760801734695
     created: 1760731734084
     url: "{{ base_url }}/api/login"
-    name: login_erro_email_invalido
+    name: login_erro_email_invalido_producao
     description: ""
     method: POST
     body:
@@ -234,12 +248,43 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: req_ea4113401dd249f8b3e93a170e8af820
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760802634414
+    created: 1760801720547
+    url: http://localhost:3000/api/login
+    name: login_erro_email_invalido_local
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": "naoexiste@emailteste.com",
+          "password": "123456"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760731645502.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_9d0b2e1fafcf40b5bfcda949674f1284
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760751287737
+    modified: 1760801711895
     created: 1760731556921
     url: "{{ base_url }}/api/login"
-    name: login_erro_senha_invalida
+    name: login_erro_senha_invalida_producao
     description: ""
     method: POST
     body:
@@ -265,12 +310,43 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: req_add0f5fc53594f29b649f254438226e8
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760796390989
+    created: 1760796375542
+    url: http://localhost:3000/api/login
+    name: login_erro_senha_invalida_local
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "nathalia@emailteste.com",
+          "password": "654F"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760731471822.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_271442b68d454eef9741bdf16398a08f
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760751282782
+    modified: 1760801703541
     created: 1760731386724
     url: "{{ base_url }}/api/login"
-    name: login_sucesso
+    name: login_sucesso_producao
     description: ""
     method: POST
     body:
@@ -296,12 +372,43 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: req_eebb2320289a42b89483374c7c6d60bb
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760795704018
+    created: 1760795695632
+    url: http://localhost:3000/api/login
+    name: login_sucesso_local
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": "nathalia@emailteste.com",
+          "password": "123456"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760731331844.25
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_7cee0769dd524a709c9a664f57029410
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760751276959
+    modified: 1760801688484
     created: 1760730940501
     url: "{{ base_url }}/api/register"
-    name: cadastro_requisicao_mal_formatada
+    name: cadastro_requisicao_mal_formatada_producao
     description: ""
     method: POST
     body:
@@ -327,12 +434,43 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: req_14aaaf2c5e7747e68bca069e04305440
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760801696532
+    created: 1760801696532
+    url: "{{ base_url }}/api/register"
+    name: cadastro_requisicao_mal_formatada_local
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "name": "TesteMalFormat",
+          "email": "mal_format@email.com"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760730999894.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_387e84348d754b0f98f7419578ac4121
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760751271594
+    modified: 1760801675043
     created: 1760730722825
     url: "{{ base_url }}/api/register"
-    name: cadastro_erro_email_invalido
+    name: cadastro_erro_email_invalido_producao
     description: ""
     method: POST
     body:
@@ -359,12 +497,44 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: req_9985a39fd4714ad3a4d50d16de4b52aa
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760801679306
+    created: 1760801669649
+    url: http://localhost:3000/api/register
+    name: cadastro_erro_email_invalido_local
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "name": "Teste3", 
+        	"email": "testeemail.com", 
+        	"password": "123456"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760730702896
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_03d8a2a5ee73493c930e8bdb95bbd008
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760751265248
+    modified: 1760801660532
     created: 1760730682967
     url: "{{ base_url }}/api/register"
-    name: cadastro_erro_senha_invalida
+    name: cadastro_erro_senha_invalida_producao
     description: ""
     method: POST
     body:
@@ -391,12 +561,44 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: req_92364f79e3e347f3aa56588da37a0b1a
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760801563803
+    created: 1760801556561
+    url: http://localhost:3000/api/register
+    name: cadastro_erro_senha_invalida_local
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "name": "Teste4", 
+        	"email": "teste4@email.com",
+          "password": "12"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760730569640
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_09781e0bd98746d3874ff55a865433fb
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760751258959
+    modified: 1760801650385
     created: 1760730456313
     url: "{{ base_url }}/api/register"
-    name: cadastro_erro_email_repetido
+    name: cadastro_erro_email_repetido_producao
     description: ""
     method: POST
     body:
@@ -421,19 +623,49 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: req_ba3b8cfab92a409eb17867946f6ae7f0
+  - _id: req_a7062dd3444c444e9cfc22b807a3ad2c
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760751020264
-    created: 1760729836396
-    url: "{{ base_url }}/api/register"
-    name: cadastro_sucesso
+    modified: 1760801531808
+    created: 1760801514017
+    url: http://localhost:3000/api/register
+    name: cadastro_erro_email_repetido_local
     description: ""
     method: POST
     body:
       mimeType: application/json
       text: |-
-        {"name": "Nathalia",
-         "email": "nathalia@emailteste.com",
+        {"name": "Nathalia2",
+         "email": "nathalia@emailteste.com", 
+         "password": "123456"}
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760730146354.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_ba3b8cfab92a409eb17867946f6ae7f0
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760804116886
+    created: 1760729836396
+    url: "{{ base_url }}/api/register"
+    name: cadastro_sucesso_producao
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {"name": "Maria",
+         "email": "maria@emailteste.com",
          "password": "123456"}
     parameters: []
     headers:
@@ -451,9 +683,39 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: req_55eadd4e097e4212b5e82a6d7f888669
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760803986383
+    created: 1760795606358
+    url: http://localhost:3000/api/register
+    name: cadastro_sucesso_local
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {"name": "Nathalia",
+         "email": "nathalia@emailteste.com",
+         "password": "123456"}
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760729836346
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: env_dabd4c57cf067ac45cc4a034a8949096d37f32fd
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760750735287
+    modified: 1760804450829
     created: 1760699629362
     name: Base Environment
     data:
