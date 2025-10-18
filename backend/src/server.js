@@ -8,7 +8,5 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "API do Mini-Projeto Fullstack está online 🚀" });
 });
 
-// ❌ Não foi usado o app.listen() na Vercel
-// Em vez disso, foi exportado o app para ser tratado como função serverless
-
+// ✅ Exporta o app — exigência da Vercel para funções serverless
 export default app;

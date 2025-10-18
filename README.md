@@ -203,5 +203,13 @@ Um vídeo de até 2 minutos foi gravado mostrando:
 
 ### 🔵 Deploy 
 
-O projeto está disponível no Vercel: 
+A API do projeto está publicada e disponível no Vercel:
+
+🔗 https://mini-projeto-fullstack-nu.vercel.app/ 
+
+Ao acessar o link principal, a API retorna a mensagem:
+
+![alt text](./backend/src/img/image7.png)
+
+### 🔵 Como testar as rotas no Insomnia
 
