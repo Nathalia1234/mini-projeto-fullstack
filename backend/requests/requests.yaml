@@ -1,13 +1,110 @@
 _type: export
 __export_format: 4
-__export_date: 2025-10-17T20:32:25.998Z
+__export_date: 2025-10-18T01:37:00.610Z
 __export_source: insomnia.desktop.app:v2023.5.8
 resources:
+  - _id: req_c21aa9e8ae334e9c81520be2769f3ab2
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760749605987
+    created: 1760749548439
+    url: https://mini-projeto-fullstack-nu.vercel.app/api/protected
+    name: /api/protected - Vercel
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/2023.5.8
+        id: pair_69ee0e9218b74c46b3e18ea80a4410eb
+      - id: pair_b291c42e37fa4f40a3f6a91725f839c9
+        name: Authorization
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZjJlNmViZDhjNDdlZTZlMDhkMjgzZiIsImlhdCI6MTc2MDc0OTUxMCwiZXhwIjoxNzYwNzUzMTEwfQ.TMgJqOZuFpsEbKFpDOxNjcwAe3ByEusMKpL7AR-3kEc
+        description: ""
+    authentication: {}
+    metaSortKey: -1760749548439
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_e262ec69667b4ef994a0b570472a26d0
+    parentId: null
+    modified: 1760699837957
+    created: 1760699627013
+    name: Desenvolvimento FullStack - Parte I
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_b45d0b9aafee4a7790802dafcfda3023
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760749539933
+    created: 1760749464695
+    url: https://mini-projeto-fullstack-nu.vercel.app/api/login
+    name: /api/login - Vercel
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": "nathalia@emailteste.com",
+          "password": "123456"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760749464695
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_a2116a646db24c38bb638f899c471a13
+    parentId: wrk_e262ec69667b4ef994a0b570472a26d0
+    modified: 1760749449383
+    created: 1760744452285
+    url: https://mini-projeto-fullstack-nu.vercel.app/api/register
+    name: /api/register - Vercel
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {"name": "Nathalia",
+         "email": "nathalia@emailteste.com",
+         "password": "123456"}
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/2023.5.8
+    authentication: {}
+    metaSortKey: -1760744452285
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_2af1e53414c44026ac4452b97fa7cc15
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760732644097
+    modified: 1760751315479
     created: 1760732559294
-    url: http://localhost:3000/api/protected
+    url: "{{ base_url }}/api/protected"
     name: protected_token_invalido
     description: ""
     method: GET
@@ -28,19 +125,11 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: wrk_e262ec69667b4ef994a0b570472a26d0
-    parentId: null
-    modified: 1760699837957
-    created: 1760699627013
-    name: Desenvolvimento FullStack - Parte I
-    description: ""
-    scope: collection
-    _type: workspace
   - _id: req_cceed06362e24f37b4b6d1c56b64cab3
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760732499129
+    modified: 1760751307788
     created: 1760732486490
-    url: http://localhost:3000/api/protected
+    url: "{{ base_url }}/api/protected"
     name: protected_sem_token
     description: ""
     method: GET
@@ -61,9 +150,9 @@ resources:
     _type: request
   - _id: req_05418111ab074eadb806b2375ec2149f
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760732433972
+    modified: 1760751240122
     created: 1760732348379
-    url: http://localhost:3000/api/protected
+    url: "{{ base_url }}/api/protected"
     name: protected_valido
     description: ""
     method: GET
@@ -86,9 +175,9 @@ resources:
     _type: request
   - _id: req_721ef82cd1c347539d34c78b6caac4a6
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760732262046
+    modified: 1760751300461
     created: 1760732235440
-    url: http://localhost:3000/api/login
+    url: "{{ base_url }}/api/login"
     name: login_requisicao_mal_formatada
     description: ""
     method: POST
@@ -116,9 +205,9 @@ resources:
     _type: request
   - _id: req_329e83ab6b7a41908d93a1cd862e71aa
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760731802267
+    modified: 1760751294071
     created: 1760731734084
-    url: http://localhost:3000/api/login
+    url: "{{ base_url }}/api/login"
     name: login_erro_email_invalido
     description: ""
     method: POST
@@ -147,9 +236,9 @@ resources:
     _type: request
   - _id: req_9d0b2e1fafcf40b5bfcda949674f1284
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760731639012
+    modified: 1760751287737
     created: 1760731556921
-    url: http://localhost:3000/api/login
+    url: "{{ base_url }}/api/login"
     name: login_erro_senha_invalida
     description: ""
     method: POST
@@ -178,9 +267,9 @@ resources:
     _type: request
   - _id: req_271442b68d454eef9741bdf16398a08f
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760731462314
+    modified: 1760751282782
     created: 1760731386724
-    url: http://localhost:3000/api/login
+    url: "{{ base_url }}/api/login"
     name: login_sucesso
     description: ""
     method: POST
@@ -209,9 +298,9 @@ resources:
     _type: request
   - _id: req_7cee0769dd524a709c9a664f57029410
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760731328370
+    modified: 1760751276959
     created: 1760730940501
-    url: http://localhost:3000/api/register
+    url: "{{ base_url }}/api/register"
     name: cadastro_requisicao_mal_formatada
     description: ""
     method: POST
@@ -240,9 +329,9 @@ resources:
     _type: request
   - _id: req_387e84348d754b0f98f7419578ac4121
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760730894925
+    modified: 1760751271594
     created: 1760730722825
-    url: http://localhost:3000/api/register
+    url: "{{ base_url }}/api/register"
     name: cadastro_erro_email_invalido
     description: ""
     method: POST
@@ -272,9 +361,9 @@ resources:
     _type: request
   - _id: req_03d8a2a5ee73493c930e8bdb95bbd008
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760730795291
+    modified: 1760751265248
     created: 1760730682967
-    url: http://localhost:3000/api/register
+    url: "{{ base_url }}/api/register"
     name: cadastro_erro_senha_invalida
     description: ""
     method: POST
@@ -304,9 +393,9 @@ resources:
     _type: request
   - _id: req_09781e0bd98746d3874ff55a865433fb
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760730538911
+    modified: 1760751258959
     created: 1760730456313
-    url: http://localhost:3000/api/register
+    url: "{{ base_url }}/api/register"
     name: cadastro_erro_email_repetido
     description: ""
     method: POST
@@ -334,9 +423,9 @@ resources:
     _type: request
   - _id: req_ba3b8cfab92a409eb17867946f6ae7f0
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760729884593
+    modified: 1760751020264
     created: 1760729836396
-    url: "http://localhost:3000/api/register "
+    url: "{{ base_url }}/api/register"
     name: cadastro_sucesso
     description: ""
     method: POST
@@ -364,11 +453,14 @@ resources:
     _type: request
   - _id: env_dabd4c57cf067ac45cc4a034a8949096d37f32fd
     parentId: wrk_e262ec69667b4ef994a0b570472a26d0
-    modified: 1760699629362
+    modified: 1760750735287
     created: 1760699629362
     name: Base Environment
-    data: {}
-    dataPropertyOrder: null
+    data:
+      base_url: https://mini-projeto-fullstack-nu.vercel.app
+    dataPropertyOrder:
+      "&":
+        - base_url
     color: null
     isPrivate: false
     metaSortKey: 1760699629362
@@ -380,3 +472,17 @@ resources:
     name: Default Jar
     cookies: []
     _type: cookie_jar
+  - _id: env_e98ea131ce014709bb8a6031782251cb
+    parentId: env_dabd4c57cf067ac45cc4a034a8949096d37f32fd
+    modified: 1760750871727
+    created: 1760750834864
+    name: Token
+    data:
+      token: "{% response 'body', 'json', '$.token' %}"
+    dataPropertyOrder:
+      "&":
+        - token
+    color: null
+    isPrivate: false
+    metaSortKey: 1760750834864
+    _type: environment
