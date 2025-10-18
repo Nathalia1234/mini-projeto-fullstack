@@ -170,15 +170,13 @@ O servidor estará disponível em:  `http://localhost:3000`
 
 ### 🔵 Vídeo de Demonstração
 
-Um vídeo de até 2 minutos foi gravado mostrando:
+Um vídeo de até 2 minutos foi gravado demonstrando:
 
-- Execução das requisições no Insomnia
+- Execução e exibição das requisições no **Insomnia**  
+- Demonstração com **endpoints locais** (via terminal/VS Code) e em **ambiente produtivo** (Vercel)  
+- Exibição dos dados cadastrados no **MongoDB Atlas**
 
-- Respostas esperadas em cada caso
-
-- Banco MongoDB Atlas exibindo os dados cadastrados
-
-                                            [Link do vídeo aqui]
+🔗 [Clique aqui para assistir ao vídeo de demonstração]( https://drive.google.com/file/d/1J7YiUEnStLZk3P4-xd3_UlcYxADzE7ih/view?usp=sharing)
 
 
 --- 
