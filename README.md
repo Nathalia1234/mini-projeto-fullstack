@@ -1,7 +1,8 @@
 #  Mini-Projeto Fullstack - Parte I  
 
-## 🔵  Versão Atual
+### 🔵  Versão Atual
 **v1.0.0** - Deploy completo no Vercel + MongoDB Atlas + Testes Insomnia  
+
 🔗 [Ver Release no GitHub](https://github.com/Nathalia1234/mini-projeto-fullstack/releases/tag/v1.0.0)
 
 
@@ -115,15 +116,15 @@ Todas as rotas foram executadas com sucesso e exportadas em um único arquivo `r
 
 ## 🔵 Exemplos de Retorno
 
-### Registro com sucesso
+### 🔸 Registro com sucesso
 
 ![alt text](./backend/src/img/image-2.png)
 
-### Login com sucesso
+### 🔸 Login com sucesso
 
 ![alt text](./backend/src/img/image-3.png)
 
-### Acesso protegido com token inválido
+### 🔸 Acesso protegido com token inválido
 
 Obs.: Para ser inválido, ao final do token original coloquei (222)
 
@@ -167,19 +168,7 @@ O servidor estará disponível em:  `http://localhost:3000`
 
 --- 
 
-### 🔵 Testes realizados
-
-Todos os testes previstos na atividade foram realizados com sucesso:
-
-- Validação de formato de e-mail e senha
-
-- Tentativa de login com dados incorretos
-
-- Acesso com e sem token
-
-- Criação de usuário e autenticação real com JWT
-
-### 🔵 Demonstração
+### 🔵 Vídeo de Demonstração
 
 Um vídeo de até 2 minutos foi gravado mostrando:
 
@@ -211,13 +200,19 @@ Um vídeo de até 2 minutos foi gravado mostrando:
 
 ### 🔵 Deploy 
 
-A API do projeto está publicada e disponível no Vercel:
-
-🔗 https://mini-projeto-fullstack-nu.vercel.app/ 
+🔸 API Online:  https://api.nathaliaohana.dev/ 
 
 Ao acessar o link principal, a API retorna a mensagem:
 
 ![alt text](./backend/src/img/image7.png)
 
-### 🔵 Como testar as rotas no Insomnia
+Endpoints principais:
+
+🔸 POST /api/register → Cadastro de usuário
+
+🔸 POST /api/login → Login e geração de token JWT
+
+🔸 GET /api/protected → Rota protegida com verificação de token
+
+---
 
