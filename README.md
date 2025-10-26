@@ -183,11 +183,27 @@ requests/
 
 ### 🔸 Acesso protegido com token inválido
 
-Obs.: Para ser inválido, ao final do token original coloquei (222)
+Obs.: Para simular um token inválido, foi adicionado o sufixo **“(222)”** ao final do token JWT original.
 
-![alt text](./backend/src/img/image-4.png)
+**Endpoint:** 
 
---- 
+`GET http://localhost:3000/api/protected`
+
+
+**Cabeçalho (Header):**
+```
+Authorization: Bearer VXGMyVcuQot8p2yXVT4(222)
+```
+
+
+**Resposta (401 Unauthorized):**
+```json
+{
+  "message": "Token inválido. Acesso negado."
+}
+```
+
+---
 
 ### 🔵 Como Executar Localmente
 
