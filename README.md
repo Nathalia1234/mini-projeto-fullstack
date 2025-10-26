@@ -1,9 +1,7 @@
 #  Mini-Projeto Fullstack - Parte I  
 
-### 🔵  Versão Atual
-**v1.0.0** - Deploy completo no Vercel + MongoDB Atlas + Testes Insomnia  
-
-🔗 [Ver Release no GitHub](https://github.com/Nathalia1234/mini-projeto-fullstack/releases/tag/v1.0.0)
+### 🔵  Versão
+**Tag de versão:** [v1.0.0](https://github.com/Nathalia1234/mini-projeto-fullstack/releases/tag/v1.0.0)
 
 
 ---
@@ -46,7 +44,14 @@ De forma resumida, a aplicação:
 - **GET /protected**:  Disponível apenas para usuários autenticados.  
   - Requer envio do token no cabeçalho:  
 
-![alt text](./backend/src/img/image-6.png)
+**Endpoint:**  
+
+`GET http://localhost:3000/api/protected`
+
+**Cabeçalho (Header):**
+```
+Authorization: Bearer {{token_local}}
+```
 
 ---
 
@@ -84,45 +89,97 @@ Caso o token seja inválido, expirado ou ausente, a API retorna mensagens como:
 
 ## 🔵 Testes de Requisição (Insomnia)  
 
-As requisições foram testadas utilizando o **Insomnia**, conforme exigido na atividade.  
+As requisições foram testadas utilizando o **Insomnia**, conforme exigido na atividade, com diferentes cenários de **validação de autenticação, login e cadastro**.
 
-![alt text](./backend/src/img/image.png)
+### 🔹 Requisições Implementadas
 
-Todas as rotas foram executadas com sucesso e exportadas em um único arquivo `requests.yaml` dentro da pasta `/requests`.
+As rotas configuradas no Insomnia cobrem **todos os casos de uso da API**, incluindo erros e sucessos:
 
-![alt text](./backend/src/img/image-1.png)
+#### 🔹 Rotas de Autenticação (GET)
+- `GET /protected_token_invalido` → Token inválido (401 Unauthorized)  
+- `GET /protected_sem_token` → Sem token (401 Unauthorized)  
+- `GET /protected_valido` → Token válido (200 OK)
 
-### 🔵 Requisições incluídas:
+#### 🔹 Rotas de Login (POST)
+- `POST /login_requisicao_mal_formada` → Requisição com corpo incorreto  
+- `POST /login_erro_email_invalido` → E-mail inexistente  
+- `POST /login_erro_senha_invalida` → Senha incorreta  
+- `POST /login_sucesso` → Login realizado com sucesso (gera token JWT)
 
-#### Cadastro
-- ✅ `cadastro_sucesso`  
-- ✅ `cadastro_erro_email_repetido`  
-- ✅ `cadastro_erro_email_invalido`  
-- ✅ `cadastro_erro_senha_invalida`  
-- ✅ `cadastro_requisicao_mal_formatada`  
+#### 🔹 Rotas de Cadastro (POST)
+- `POST /cadastro_requisicao_mal_formada` → Corpo inválido  
+- `POST /cadastro_erro_email_invalido` → E-mail em formato incorreto  
+- `POST /cadastro_erro_senha_invalida` → Senha não atende aos critérios  
+- `POST /cadastro_erro_email_repetido` → E-mail já cadastrado  
+- `POST /cadastro_sucesso` → Usuário cadastrado com sucesso
 
-#### Login
-- ✅ `login_sucesso`  
-- ✅ `login_erro_email_invalido`  
-- ✅ `login_erro_senha_invalida`  
-- ✅ `login_requisicao_mal_formatada`  
 
-#### Rotas protegidas
-- ✅ `protected_valido`  
-- ✅ `protected_sem_token`  
-- ✅ `protected_token_invalido`  
+Todas as rotas foram **exportadas com sucesso** em um único arquivo `.yaml` dentro da pasta `/requests`.
+
+
+**Estrutura:**
+```
+requests/
+└── requests.yaml
+```
+
+
+🔹 **Arquivo:** [`requests.yaml`](./requests/requests.yaml)
+
+---
+
+> Os testes garantiram a estabilidade das rotas, validando a autenticação JWT e as respostas esperadas em **ambos os ambientes (local e produção)**.
 
 ---
 
 ## 🔵 Exemplos de Retorno
 
-### 🔸 Registro com sucesso
+### 🔸 Registro de usuário:
 
-![alt text](./backend/src/img/image-2.png)
+**Endpoint:**  
+`POST http://localhost:3000/api/register`
 
-### 🔸 Login com sucesso
+**Corpo da requisição:**
+```json
+{
+  "name": "Nathalia",
+  "email": "nathalia1@email.com",
+  "password": "123456"
+}
+```
 
-![alt text](./backend/src/img/image-3.png)
+**Resposta (201 Created):**
+```json
+{
+  "message": "Usuário criado com sucesso!",
+}
+```
+
+---
+
+### 🔸 Login de usuário:
+
+**Endpoint:**  
+
+`POST http://localhost:3000/api/login`
+
+**Corpo da requisição:**
+```json
+{
+  "email": "nathalia1@email.com",
+  "password": "123456"
+}
+```
+
+**Resposta (200 OK):**
+```json
+{
+  "message": "Login bem-sucedido!",
+  "token": 
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6..."
+}
+```
+> O token retornado foi utilizado nas próximas requisições como autenticação Bearer Token.
 
 ### 🔸 Acesso protegido com token inválido
 
@@ -176,7 +233,7 @@ Um vídeo de até 2 minutos foi gravado demonstrando:
 - Demonstração com **endpoints locais** (via terminal/VS Code) e em **ambiente produtivo** (Vercel)  
 - Exibição dos dados cadastrados no **MongoDB Atlas**
 
-🔗 [Clique aqui para assistir ao vídeo de demonstração]( https://drive.google.com/file/d/1J7YiUEnStLZk3P4-xd3_UlcYxADzE7ih/view?usp=sharing)
+👉 [Clique aqui para assistir ao vídeo de demonstração]( https://drive.google.com/file/d/1J7YiUEnStLZk3P4-xd3_UlcYxADzE7ih/view?usp=sharing)
 
 
 --- 
@@ -201,8 +258,11 @@ Um vídeo de até 2 minutos foi gravado demonstrando:
 🔸 API Online:  https://api.nathaliaohana.dev/ 
 
 Ao acessar o link principal, a API retorna a mensagem:
-
-![alt text](./backend/src/img/image7.png)
+```
+{
+  "message": "API do Mini-Projeto Fullstack está online 🚀"
+}
+```
 
 Endpoints principais:
 
